@@ -34,7 +34,7 @@ function MembersSlide({ slide }) {
     <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
       <div className="space-y-6">
         <p className="text-xs uppercase tracking-[0.45em] text-acid/80">Project Members</p>
-        <h1 className="font-display text-5xl uppercase text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
         <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
@@ -64,7 +64,7 @@ function DefaultSlide({ slide }) {
     <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="space-y-6">
         <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
-        <h1 className="font-display text-5xl uppercase text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
         <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
@@ -94,7 +94,7 @@ function MetricsSlide({ slide }) {
     <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
       <div className="space-y-6">
         <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
-        <h1 className="font-display text-5xl uppercase text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
         <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
@@ -256,7 +256,7 @@ export default function App() {
         <div className="absolute bottom-[-80px] left-1/3 h-80 w-80 rounded-full bg-acid/10 blur-3xl" />
       </div>
 
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16">
+      <div className="mx-auto flex h-screen max-w-6xl flex-col justify-center px-6 py-10">
         <div className="mb-8 flex items-center justify-between text-xs uppercase tracking-[0.4em] text-acid/70">
           <span>Waste Wars</span>
           <span>
