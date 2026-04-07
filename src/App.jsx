@@ -187,12 +187,12 @@ export default function App() {
         kicker: 'Build',
         title: 'Tech Stack',
         subtitle:
-          'Modern tooling for speed, clarity, and motion-rich storytelling.',
+          'Tools that power the Waste Wars platform from citizen apps to city dashboards.',
         metrics: [
-          { label: 'Frontend', value: 'React + Tailwind', detail: 'Component-driven UI and rapid styling.' },
-          { label: 'Motion', value: 'Framer Motion', detail: 'Slide transitions and staggered reveals.' },
-          { label: 'Backend', value: 'Spring Boot', detail: 'Secure APIs and business logic.' },
-          { label: 'Data', value: 'MySQL', detail: 'Reliable storage for submissions and rewards.' },
+          { label: 'Frontend', value: 'React + Vite', detail: 'Citizen and admin portals with fast UI.' },
+          { label: 'Backend', value: 'Spring Boot', detail: 'Secure APIs, auth, and verification flow.' },
+          { label: 'Database', value: 'MySQL', detail: 'Submissions, rewards, and leaderboard data.' },
+          { label: 'Analytics', value: 'Charts + KPIs', detail: 'Impact dashboards for city teams.' },
         ],
       },
       {
