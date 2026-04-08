@@ -37,7 +37,9 @@ function MembersSlide({ slide }) {
         <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
-        <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        {slide.subtitle ? (
+          <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        ) : null}
         <div className="inline-flex items-center gap-3 rounded-full border border-acid/30 bg-acid/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-acid">
           Waste Wars
         </div>
@@ -63,11 +65,15 @@ function DefaultSlide({ slide }) {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="space-y-6">
-        <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
+        {slide.kicker ? (
+          <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
+        ) : null}
         <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
-        <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        {slide.subtitle ? (
+          <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        ) : null}
         {slide.badge ? (
           <div className="inline-flex items-center gap-3 rounded-full border border-acid/30 bg-acid/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-acid">
             {slide.badge}
@@ -75,15 +81,17 @@ function DefaultSlide({ slide }) {
         ) : null}
       </div>
       <div className="space-y-4">
-        {slide.points.map((point) => (
-          <motion.div
-            key={point}
-            variants={item}
-            className="rounded-2xl border border-acid/15 bg-[#0f1911]/70 p-5 text-base text-fog/85 shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
-          >
-            {point}
-          </motion.div>
-        ))}
+        {slide.points?.length
+          ? slide.points.map((point) => (
+              <motion.div
+                key={point}
+                variants={item}
+                className="rounded-2xl border border-acid/15 bg-[#0f1911]/70 p-5 text-base text-fog/85 shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
+              >
+                {point}
+              </motion.div>
+            ))
+          : null}
       </div>
     </div>
   );
@@ -93,23 +101,29 @@ function MetricsSlide({ slide }) {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
       <div className="space-y-6">
-        <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
+        {slide.kicker ? (
+          <p className="text-xs uppercase tracking-[0.45em] text-acid/80">{slide.kicker}</p>
+        ) : null}
         <h1 className="font-display text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
-        <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        {slide.subtitle ? (
+          <p className="max-w-xl text-lg text-fog/75">{slide.subtitle}</p>
+        ) : null}
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        {slide.metrics.map((metric) => (
-          <div
-            key={metric.label}
-            className="rounded-2xl border border-acid/20 bg-gradient-to-br from-[#0e1811] via-[#0f1a12] to-[#0c120d] p-5 shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
-          >
-            <p className="text-xs uppercase tracking-[0.35em] text-acid/70">{metric.label}</p>
-            <p className="mt-4 text-3xl font-semibold text-white">{metric.value}</p>
-            <p className="mt-2 text-sm text-fog/70">{metric.detail}</p>
-          </div>
-        ))}
+        {slide.metrics?.length
+          ? slide.metrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-2xl border border-acid/20 bg-gradient-to-br from-[#0e1811] via-[#0f1a12] to-[#0c120d] p-5 shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
+              >
+                <p className="text-xs uppercase tracking-[0.35em] text-acid/70">{metric.label}</p>
+                <p className="mt-4 text-3xl font-semibold text-white">{metric.value}</p>
+                <p className="mt-2 text-sm text-fog/70">{metric.detail}</p>
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );
@@ -122,104 +136,80 @@ export default function App() {
         id: 'members',
         type: 'members',
         title: 'Waste Wars',
-        subtitle: 'Smart rewards for smarter waste. Built by Team Waste Wars.',
+        subtitle: 'An Eco-Friendly Project',
         members: ['24SW121', '24SW078', '24SW169', '24SW142'],
-      },
-      {
-        id: 'intro',
-        type: 'default',
-        kicker: 'Overview',
-        title: 'Waste Wars',
-        subtitle:
-          'A gamified waste management platform that makes recycling competitive, rewarding, and measurable.',
-        badge: 'Green City Challenge',
-        points: [
-          'Collect. Verify. Reward. A simple loop that builds daily habits.',
-          'Live leaderboards and missions keep citizens engaged.',
-          'Dashboards show real-time impact for communities and admins.',
-        ],
       },
       {
         id: 'problem',
         type: 'default',
-        kicker: 'Problem',
-        title: 'Waste stays invisible',
-        subtitle:
-          'Most cities lack real-time data on household waste, and people never see the impact of doing it right.',
-        badge: 'Pain Points',
-        points: [
-          'Low awareness of proper segregation and recycling.',
-          'No incentives for consistent participation.',
-          'Manual reporting delays policy and collection decisions.',
-        ],
+        kicker: '',
+        title: 'Problem',
+        subtitle: '',
+        badge: '',
+        points: [],
       },
       {
         id: 'solution',
         type: 'default',
-        kicker: 'Solution',
-        title: 'Gamify sustainability',
-        subtitle:
-          'Waste Wars blends proof of disposal, rewards, and community rivalry to keep participation high.',
-        badge: 'Core Loop',
-        points: [
-          'Photo-backed submissions with verification.',
-          'Eco-points unlock badges, perks, and rank boosts.',
-          'Insights flag neighborhoods that need support.',
-        ],
+        kicker: '',
+        title: 'Solution',
+        subtitle: '',
+        badge: '',
+        points: [],
+      },
+      {
+        id: 'how',
+        type: 'default',
+        kicker: '',
+        title: 'How It Works',
+        subtitle: '',
+        badge: '',
+        points: [],
       },
       {
         id: 'features',
         type: 'default',
-        kicker: 'Experience',
-        title: 'Designed for action',
-        subtitle:
-          'Every screen pushes the next best step: sort, submit, earn, and celebrate.',
-        badge: 'Key Modules',
+        kicker: '',
+        title: 'Key Features',
+        subtitle: '',
+        badge: '',
         points: [
-          'Citizen dashboard with missions, streaks, and rewards.',
-          'Admin console for verification queues and route planning.',
-          'Community leaderboard for teams, schools, and districts.',
+          'Dashboard',
+          'Leaderboard',
+          'Rewards system',
+          'Profile',
         ],
       },
       {
         id: 'stack',
-        type: 'metrics',
-        kicker: 'Build',
+        type: 'default',
+        kicker: '',
         title: 'Tech Stack',
-        subtitle:
-          'Tools that power the Waste Wars platform from citizen apps to city dashboards.',
-        metrics: [
-          { label: 'Frontend', value: 'React + Vite', detail: 'Citizen and admin portals with fast UI.' },
-          { label: 'Backend', value: 'Spring Boot', detail: 'Secure APIs, auth, and verification flow.' },
-          { label: 'Database', value: 'MySQL', detail: 'Submissions, rewards, and leaderboard data.' },
-          { label: 'Analytics', value: 'Charts + KPIs', detail: 'Impact dashboards for city teams.' },
-        ],
+        subtitle: '',
+        badge: '',
+        points: [],
       },
       {
         id: 'impact',
-        type: 'metrics',
-        kicker: 'Impact',
-        title: 'Measurable change',
-        subtitle: 'Waste Wars turns participation into visible outcomes.',
-        metrics: [
-          { label: 'Engagement', value: 'Higher', detail: 'Gamification increases daily usage.' },
-          { label: 'Recycling', value: 'Smarter', detail: 'Missions improve sorting accuracy.' },
-          { label: 'Transparency', value: 'Live KPIs', detail: 'Dashboards show verified progress.' },
-          { label: 'Rewards', value: 'Real Value', detail: 'Perks keep users coming back.' },
+        type: 'default',
+        kicker: '',
+        title: 'Impact & Future',
+        subtitle: '',
+        badge: '',
+        points: [
+          'Increase recycling rate',
+          'Cleaner campus',
+          'Future: Mobile app + QR bins',
         ],
       },
       {
-        id: 'roadmap',
+        id: 'closing',
         type: 'default',
-        kicker: 'Next',
-        title: 'Roadmap',
-        subtitle: 'Scaling from pilot to city-wide playbook.',
-        badge: 'Phase 2',
-        points: [
-          'Smart bins and weight sensors for automatic capture.',
-          'Partner marketplace for local green rewards.',
-          'AI insights to optimize collection routes.',
-        ],
+        kicker: '',
+        title: 'Recycle Today, Reward Tomorrow',
+        subtitle: 'Thank You!',
+        badge: '',
+        points: [],
       },
     ],
     []
