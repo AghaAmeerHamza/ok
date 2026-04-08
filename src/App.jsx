@@ -163,7 +163,7 @@ export default function App() {
         badge: 'Core Idea',
         points: [
           'Verify waste submissions with photo proof.',
-          'Reward users with eco‑points.',
+          'Reward users with eco‑points which can be used to redeem perks.',
           'Show impact instantly through community dashboards.',
         ],
       },
