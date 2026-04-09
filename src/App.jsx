@@ -193,7 +193,7 @@ export default function App() {
           'Dashboard',
           'Leaderboard',
           'Rewards system',
-          'Profile',
+          'Log Waste',
         ],
       },
       {
