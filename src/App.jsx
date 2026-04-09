@@ -176,7 +176,7 @@ export default function App() {
           'A simple loop that encourages habit formation and long‑term engagement.',
         badge: 'Workflow',
         points: [
-          'User sorts waste and submits a photo or scan.',
+          'User sorts waste and submits a photo.',
           'System verifies and awards eco‑points.',
           'Points unlock rewards and update the leaderboard.',
           'Admins monitor progress and optimize collection.',
